@@ -1,18 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('loaded page');
-
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    var current = tabs[0];
-    console.log(current);
-    chrome.tabs.detectLanguage(current.id, function (language) {
-      console.log(language);
-    });
-  });
-
+  console.log('loaded page at ' + new Date().toLocaleString());
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender) {
-  detectLanguage(request.text);
+  console.log(request.text)
 });
 
 window.onload = chrome.tabs.executeScript(null, {
