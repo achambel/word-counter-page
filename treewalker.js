@@ -8,7 +8,7 @@ var nodeReject = {
 function treeWalker(ele) {
   var nodes = document.createTreeWalker(ele, NodeFilter.SHOW_TEXT, nodeReject, false);
   var text = [];
-  regex = new RegExp(/['"!@#$£%¢¬&*\(\)-_+=§`´{[^~\]}<,.>;:\\/°?|]+$/g);
+  regex = new RegExp(/^['"!@#$£%¢¬&*()\-_+=§`´{[^~\]}<,.>;:\/°?|\d]+|['"!@#$£%¢¬&*()\-_+=§`´{[^~\]}<,.>;:\/°?|\d]+$/g);
 
   while(node = nodes.nextNode()) {
     var words = node.data
@@ -24,4 +24,17 @@ function treeWalker(ele) {
 
 var nodes = treeWalker(document.body);
 
-chrome.runtime.sendMessage({ text: nodes });
+var words = {}
+
+nodes.forEach( (word) => {
+  var prop = word.toLowerCase();
+
+  if(prop in words) {
+    words[prop].count = words[prop].count + 1;
+  }
+  else {
+    words[prop] = { count: 1 };
+  }
+});
+
+chrome.runtime.sendMessage({ text: words });
