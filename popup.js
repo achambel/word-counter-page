@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender) {
-  console.log(request.text)
+  request.text.forEach((word) => console.log(word));
 });
 
 window.onload = chrome.tabs.executeScript(null, {

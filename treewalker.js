@@ -7,9 +7,16 @@ var nodeReject = {
 
 function treeWalker(ele) {
   var nodes = document.createTreeWalker(ele, NodeFilter.SHOW_TEXT, nodeReject, false);
-  var text = []
+  var text = [];
+  regex = new RegExp(/['"!@#$£%¢¬&*\(\)-_+=§`´{[^~\]}<,.>;:\\/°?|]+$/g);
+
   while(node = nodes.nextNode()) {
-    text = text.concat(node.data.split(/\s/));
+    var words = node.data
+                    .split(/\s/)
+                    .map((str) => str.replace(regex, ''))
+                    .filter((str) => !!str);
+
+    text = text.concat(words);
   }
   return text;
 }
