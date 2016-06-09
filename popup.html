@@ -2,19 +2,22 @@
 <html>
 <head>
   <title></title>
-  <style type="text/css">
-    #content {
-      min-height: 400px;
-      min-width: 400px;
-      max-width: 400px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/vendor/semantic.min.css">
   <script src="popup.js"></script>
 </head>
 <body>
   <div id="content">
-    <span id="messages"></span>
-    <button class="ui button">Click here</button>
+    <div id="messages" class="ui info message"></div>
+    <table id="word-table" class="ui unstackable striped table">
+      <thead>
+        <tr>
+          <th id="word"></th>
+          <th id="qty"></th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </div>
 </body>
 </html>

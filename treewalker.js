@@ -24,17 +24,22 @@ function treeWalker(ele) {
 
 var nodes = treeWalker(document.body);
 
-var words = {}
+var words = []
 
-nodes.forEach( (word) => {
-  var prop = word.toLowerCase();
+nodes.forEach( (text) => {
+  var word = text.toLowerCase();
 
-  if(prop in words) {
-    words[prop].count = words[prop].count + 1;
+  var wordIndex = words.findIndex( (w) => w.word == word );
+
+  if(wordIndex >= 0) {
+    words[wordIndex].counter = words[wordIndex].counter + 1;
   }
   else {
-    words[prop] = { count: 1 };
+    words.push({word: word, counter: 1});
   }
+
 });
 
-chrome.runtime.sendMessage({ text: words });
+words = words.sort( (a, b) => b.counter - a.counter );
+
+chrome.runtime.sendMessage({ words: words });

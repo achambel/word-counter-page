@@ -1,0 +1,25 @@
+{
+  "extName": {
+    "message": "Word Counter Page"
+  },
+
+  "extDescription": {
+    "message": "This extension counter words from current page"
+  },
+
+  "defaultTitle": {
+    "message": "Click here to display the word count"
+  },
+
+  "wordsFound": {
+    "message": "Words found"
+  },
+
+  "word": {
+    "message": "Word"
+  },
+
+  "qty": {
+    "message": "Quantity"
+  }
+}

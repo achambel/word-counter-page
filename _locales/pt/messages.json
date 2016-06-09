@@ -1,0 +1,26 @@
+{
+  "extName": {
+    "message": "Contador de palavras da página"
+  },
+
+  "extDescription": {
+    "message": "Esta extensão conta as palavras da página atual"
+  },
+
+  "defaultTitle": {
+    "message": "Clique aqui para mostrar o contador de palavras"
+  },
+
+  "wordsFound": {
+    "message": "Palavras encontradas"
+  },
+
+  "word": {
+    "message": "Palavra"
+  },
+
+  "qty": {
+    "message": "Quantidade"
+  }
+
+}

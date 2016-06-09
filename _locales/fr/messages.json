@@ -1,0 +1,26 @@
+{
+  "extName": {
+    "message": "Page Compteur de mots"
+  },
+
+  "extDescription": {
+    "message": "Cette extension compte les mots de la page en cours"
+  },
+
+  "defaultTitle": {
+    "message": "Cliquez ici pour voir le nombre de mots"
+  },
+
+  "wordsFound": {
+    "message": "Mots trouvés"
+  },
+
+  "word": {
+    "message": "Mots"
+  },
+
+  "qty": {
+    "message": "Quantité"
+  }
+
+}
